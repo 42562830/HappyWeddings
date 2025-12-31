@@ -20,7 +20,7 @@
             --bg-crema: #f8eff1;      
             --bg-azul: #d6e8ef;       
             --texto-principal: #2b2323; 
-            --texto-secundario: #5a5350; /* Un poco más oscuro para mejor lectura */
+            --texto-secundario: #5a5350;
             --blanco: #ffffff;
             --acento: #e6bdc3;        
             --verde-exito: #4a6d4d;
@@ -32,8 +32,8 @@
             background-color: var(--bg-crema);
             color: var(--texto-principal);
             font-family: 'Lato', sans-serif;
-            font-weight: 400; /* Subido de 300 a 400 para mejor lectura en móvil */
-            font-size: 18px;  /* AUMENTADO: Antes base 16px, ahora 18px */
+            font-weight: 400;
+            font-size: 18px;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
@@ -48,10 +48,10 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 0 25px; /* Más aire lateral */
+            padding: 0 25px;
         }
 
-        /* --- HEADER CON LOGO --- */
+        /* --- HEADER --- */
         header {
             text-align: center;
             padding: 50px 20px 40px;
@@ -63,7 +63,7 @@
         }
 
         .logo-img {
-            max-width: 180px; /* Tamaño controlado del logo */
+            max-width: 180px;
             height: auto;
             margin-bottom: 25px;
             display: block;
@@ -78,7 +78,7 @@
         }
 
         header p {
-            font-size: 1.1rem; /* Texto intro más grande */
+            font-size: 1.1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--texto-secundario);
@@ -89,7 +89,7 @@
 
         .card {
             background: var(--blanco);
-            padding: 35px 30px; /* Más padding interno */
+            padding: 35px 30px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.04);
             margin-bottom: 25px;
@@ -99,7 +99,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem; /* Títulos más grandes */
+            font-size: 2.2rem;
             margin-bottom: 35px;
             position: relative;
             padding-bottom: 15px;
@@ -110,15 +110,13 @@
             position: absolute;
             bottom: 0; left: 50%;
             transform: translateX(-50%);
-            width: 60px; height: 2px; /* Línea un poco más gruesa */
+            width: 60px; height: 2px;
             background: var(--acento);
         }
 
-        p, li {
-            font-size: 1.05rem; /* Asegura legibilidad */
-        }
+        p, li { font-size: 1.05rem; }
 
-        /* --- VIDEO REEL --- */
+        /* --- VIDEO REEL & CONTROLES --- */
         .video-container {
             width: 100%;
             border-radius: 20px;
@@ -134,9 +132,55 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            cursor: pointer; /* Indica que es clickable */
         }
 
-        /* --- MOCKUP IPHONE CSS --- */
+        /* Capas superpuestas (Overlays) */
+        .sound-overlay, .replay-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Replay overlay oculto por defecto */
+        .replay-overlay {
+            display: none; /* Se activa con JS */
+            background: rgba(0,0,0,0.6); /* Un poco más oscuro para leer texto */
+            opacity: 0;
+        }
+
+        .sound-btn, .replay-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Animación de latido para el botón inicial */
+        .pulse-anim { animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* --- MOCKUP IPHONE REPARADO (FIX) --- */
         .mockup-wrapper {
             display: flex;
             justify-content: center;
@@ -145,7 +189,8 @@
         }
 
         .iphone-mockup {
-            width: 290px; 
+            /* He aumentado el ancho a 300px para que se vea mejor */
+            width: 300px; 
             height: 600px;
             background: #151515;
             border-radius: 45px;
@@ -156,163 +201,105 @@
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .iphone-mockup:hover {
-            transform: rotateY(0) rotateX(0);
-        }
+        .iphone-mockup:hover { transform: rotateY(0) rotateX(0); }
 
         .iphone-screen {
-            width: 100%;
-            height: 100%;
+            width: 100%; 
+            height: 100%; 
             background: white;
-            border-radius: 32px;
-            overflow: hidden;
+            border-radius: 32px; 
+            overflow: hidden; 
             position: relative;
-            /* Fix para esquinas redondeadas en Safari */
             -webkit-mask-image: -webkit-radial-gradient(white, black);
         }
 
         .iphone-notch {
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 110px; height: 28px;
-            background: #151515;
-            border-bottom-left-radius: 18px;
-            border-bottom-right-radius: 18px;
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 110px; height: 28px; background: #151515;
+            border-bottom-left-radius: 18px; border-bottom-right-radius: 18px;
             z-index: 10;
         }
 
+        /* AQUÍ ESTÁ EL FIX DEL DESCENTRADO */
         .website-frame {
-            width: 100%;
-            height: 100%;
+            /* 1. Definimos el ancho REAL de un iPhone estándar */
+            width: 375px; 
+            
+            /* 2. Ajustamos la altura para compensar el zoom (100% / 0.725) */
+            height: 138%; 
+            
             border: none;
             pointer-events: none; 
             background: white;
+            position: absolute;
+            top: 0; left: 0;
+            
+            /* 3. TRUCO DE MAGIA: Escalamos la web al 72.5% para que quepa en el hueco de 272px */
+            transform: scale(0.725); 
+            transform-origin: top left;
         }
 
         .mockup-overlay-btn {
-            position: absolute;
-            bottom: 40px; left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.98);
-            color: var(--texto-principal);
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            z-index: 20;
-            text-decoration: none;
-            white-space: nowrap;
-            letter-spacing: 1px;
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+            background: rgba(255,255,255,0.98); color: var(--texto-principal);
+            padding: 14px 28px; border-radius: 50px; font-size: 0.9rem;
+            font-weight: 700; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25); z-index: 20;
+            text-decoration: none; white-space: nowrap; letter-spacing: 1px;
             transition: transform 0.3s ease;
         }
         
-        .mockup-overlay-btn:hover {
-            transform: translateX(-50%) scale(1.08);
-        }
+        .mockup-overlay-btn:hover { transform: translateX(-50%) scale(1.08); }
 
-        /* --- PRECIOS (MEJORADOS) --- */
+        /* --- PRECIOS --- */
         .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Alineación arriba por si el texto ocupa 2 líneas */
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;
         }
-
         .price-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         
-        .concept h4 { 
-            font-size: 1.3rem; 
-            margin-bottom: 8px; 
-            font-weight: 600;
-        }
-        .concept span { 
-            font-size: 0.95rem; 
-            color: var(--texto-secundario); 
-            display: block; 
-            line-height: 1.4;
-        }
-        
+        .concept h4 { font-size: 1.3rem; margin-bottom: 8px; font-weight: 600; }
+        .concept span { font-size: 0.95rem; color: var(--texto-secundario); display: block; line-height: 1.4; }
         .amount {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
-            font-weight: 600;
-            white-space: nowrap;
-            margin-left: 15px;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.7rem;
+            font-weight: 600; white-space: nowrap; margin-left: 15px;
         }
 
         .total-box {
-            background: var(--bg-azul);
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 30px;
+            background: var(--bg-azul); padding: 30px 20px; border-radius: 20px;
+            text-align: center; margin-top: 30px;
         }
-        
         .total-box h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
         .total-price { font-size: 3.5rem; font-weight: 600; color: var(--texto-principal); line-height: 1; margin: 10px 0; }
 
         /* --- HOSTINGER --- */
         .hostinger-box {
-            background: #673de6;
-            color: white;
-            padding: 35px 30px;
-            border-radius: 25px;
-            text-align: center;
+            background: #673de6; color: white; padding: 35px 30px;
+            border-radius: 25px; text-align: center;
             box-shadow: 0 20px 40px rgba(103, 61, 230, 0.3);
         }
         .hostinger-box h3 { color: white; font-size: 1.8rem; margin-bottom: 15px; }
         .hostinger-box p { color: rgba(255,255,255,0.9); font-size: 1rem; }
         
-        /* --- BOTONES GRANDES --- */
+        /* --- BOTONES --- */
         .btn-action {
-            display: block;
-            width: 100%;
-            padding: 18px; /* Botón más alto */
-            background: var(--texto-principal);
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 1rem; /* Texto botón más grande */
-            font-weight: 700;
-            transition: all 0.3s;
-            margin-top: 25px;
+            display: block; width: 100%; padding: 18px;
+            background: var(--texto-principal); color: white;
+            text-decoration: none; text-align: center;
+            border-radius: 50px; text-transform: uppercase;
+            letter-spacing: 1.5px; font-size: 1rem; font-weight: 700;
+            transition: all 0.3s; margin-top: 25px;
             border: 2px solid var(--texto-principal);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        .btn-action:hover { background: transparent; color: var(--texto-principal); }
 
-        .btn-action:active { transform: scale(0.98); }
-
-        .btn-action:hover {
-            background: transparent;
-            color: var(--texto-principal);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--texto-principal);
-            border: 2px solid var(--texto-principal);
-        }
-        
-        .btn-outline:hover { background: var(--texto-principal); color: white; }
-
-        .btn-white {
-            background: white; color: #673de6; border: none;
-        }
+        .btn-white { background: white; color: #673de6; border: none; }
         .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
 
         /* --- ANIMACIONES --- */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            opacity: 0; transform: translateY(30px); transition: all 0.8s ease;
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -322,7 +309,7 @@
 
     <header class="reveal">
         <div class="container">
-            <!-- LOGO INTEGRADO -->
+            <!-- LOGO -->
             <img src="Logo.png" alt="Happy Weddings Logo" class="logo-img">
             <h1>Hola, Sonia</h1>
             <p>Tu nueva identidad digital</p>
@@ -339,38 +326,45 @@
             </p>
             
             <div class="video-container">
-                <!-- VIDEO INSERTADO -->
-                <video controls autoplay muted loop playsinline>
+                <!-- VIDEO -->
+                <video id="reelVideo" autoplay muted loop playsinline>
                      <source src="https://42562830.github.io/HappyWeddings/reel_low.mp4" type="video/mp4">
                      Tu navegador no soporta video.
                 </video>
+
+                <!-- BOTÓN 1: ACTIVAR SONIDO (INICIAL) -->
+                <div class="sound-overlay" id="soundBtn" onclick="activateExperience()">
+                    <div class="sound-btn pulse-anim">
+                        <i class="fas fa-volume-up"></i> Activar Sonido
+                    </div>
+                </div>
+
+                <!-- BOTÓN 2: VOLVER A VER (FINAL) -->
+                <div class="replay-overlay" id="replayBtn" onclick="replayVideo()">
+                    <div class="replay-btn">
+                        <i class="fas fa-redo"></i> Volver a ver
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- SECCIÓN 2: MOCKUP 3D -->
         <section class="reveal">
             <h2 class="section-title">02. Tu Web (Preview)</h2>
-            
             <p style="text-align: center; color: var(--texto-secundario); margin-bottom: 10px;">
                 Así se ve tu nueva casa digital. Diseño editorial, minimalista y rápido.
             </p>
-
-            <!-- EL MOCKUP DEL IPHONE -->
             <div class="mockup-wrapper">
                 <div class="iphone-mockup">
                     <div class="iphone-notch"></div>
                     <div class="iphone-screen">
-                        <!-- Cargamos tu web de GitHub aquí dentro -->
                         <iframe src="https://42562830.github.io/HappyWeddings/" class="website-frame"></iframe>
-                        
-                        <!-- Botón flotante -->
                         <a href="https://42562830.github.io/HappyWeddings/" target="_blank" class="mockup-overlay-btn">
                             <i class="fas fa-external-link-alt"></i> Ver Web Completa
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="card" style="margin-top: -30px; padding-top: 50px;">
                 <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 20px;">¿Qué incluye?</h3>
                 <ul style="list-style: none; font-size: 1rem;">
@@ -385,8 +379,6 @@
         <section class="reveal">
             <h2 class="section-title">03. Inversión Pack Lanzamiento</h2>
             <div class="card" style="border: 1px solid var(--acento);">
-                
-                <!-- Item 1 -->
                 <div class="price-row">
                     <div class="concept">
                         <h4>Diseño & Desarrollo Web</h4>
@@ -394,8 +386,6 @@
                     </div>
                     <div class="amount">350€</div>
                 </div>
-
-                <!-- Item 2 -->
                 <div class="price-row">
                     <div class="concept">
                         <h4>Reel IA Lanzamiento</h4>
@@ -403,8 +393,6 @@
                     </div>
                     <div class="amount">100€</div>
                 </div>
-                
-                <!-- Item 3 -->
                 <div class="price-row">
                     <div class="concept">
                         <h4>Configuración Servidor</h4>
@@ -412,8 +400,6 @@
                     </div>
                     <div class="amount">Incluido</div>
                 </div>
-
-                <!-- Total -->
                 <div class="total-box">
                     <h3>Total Pack Amiga</h3>
                     <div class="total-price">450€</div>
@@ -455,7 +441,6 @@
                 </p>
                 <div style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px;">~3,99€<span style="font-size: 1.2rem; font-weight: 400;">/mes</span></div>
                 <p style="font-size: 0.9rem; margin-bottom: 25px;">(Se suele pagar anual o cuatrienal para ahorrar)</p>
-                
                 <a href="https://www.hostinger.es/hosting-web" target="_blank" class="btn-action btn-white">Ver Precios Hostinger</a>
                 <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.8;">
                     *Esto lo pagas tú directamente a Hostinger para que las facturas estén a tu nombre. Yo te incluyo la configuración completa gratis.
@@ -475,12 +460,11 @@
     </footer>
 
     <script>
+        // Animaciones Scroll
         const revealElements = document.querySelectorAll('.reveal');
-        
         const revealOnScroll = () => {
             const windowHeight = window.innerHeight;
             const elementVisible = 50;
-            
             revealElements.forEach((reveal) => {
                 const elementTop = reveal.getBoundingClientRect().top;
                 if (elementTop < windowHeight - elementVisible) {
@@ -488,9 +472,95 @@
                 }
             });
         };
-        
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
+
+        // --- LÓGICA DE VIDEO AVANZADA ---
+        const video = document.getElementById('reelVideo');
+        const soundBtn = document.getElementById('soundBtn');
+        const replayBtn = document.getElementById('replayBtn');
+        let wakeLock = null;
+
+        // 1. GESTIÓN WAKE LOCK (EVITAR QUE SE APAGUE LA PANTALLA)
+        async function requestWakeLock() {
+            try {
+                if ('wakeLock' in navigator) {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                    console.log('Pantalla mantenida activa.');
+                }
+            } catch (err) {
+                console.log(`${err.name}, ${err.message}`);
+            }
+        }
+
+        async function releaseWakeLock() {
+            if (wakeLock !== null) {
+                await wakeLock.release();
+                wakeLock = null;
+                console.log('Bloqueo de pantalla liberado.');
+            }
+        }
+
+        // 2. ACTIVAR EXPERIENCIA (BOTÓN INICIAL)
+        function activateExperience() {
+            // Sonido ON, Bucle OFF (para que pare al final)
+            video.muted = false;
+            video.loop = false; 
+            video.currentTime = 0; // Reiniciar para impacto
+            video.play();
+
+            // Ocultar botón inicial
+            soundBtn.style.opacity = '0';
+            setTimeout(() => { soundBtn.style.display = 'none'; }, 400);
+
+            // Pedir que no se apague la pantalla
+            requestWakeLock();
+        }
+
+        // 3. CONTROL PAUSA/PLAY AL TOCAR EL VIDEO
+        video.addEventListener('click', function() {
+            // Solo si el sonido ya fue activado (el botón inicial ya no está)
+            if (soundBtn.style.display === 'none') {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        });
+
+        // 4. AL TERMINAR EL VIDEO
+        video.addEventListener('ended', function() {
+            // Mostrar botón Replay
+            replayBtn.style.display = 'flex';
+            // Pequeño delay para la opacidad (efecto fade-in)
+            setTimeout(() => { replayBtn.style.opacity = '1'; }, 50);
+            
+            // Liberar pantalla para que pueda apagarse si ya no interactúa
+            releaseWakeLock();
+        });
+
+        // 5. FUNCIÓN REPLAY
+        function replayVideo() {
+            // Ocultar Replay
+            replayBtn.style.opacity = '0';
+            setTimeout(() => { replayBtn.style.display = 'none'; }, 400);
+
+            // Reiniciar video
+            video.currentTime = 0;
+            video.play();
+
+            // Volver a pedir bloqueo de pantalla
+            requestWakeLock();
+        }
+
+        // Recuperar Wake Lock si se pierde (ej: cambia de pestaña y vuelve)
+        document.addEventListener('visibilitychange', async () => {
+            if (wakeLock !== null && document.visibilityState === 'visible') {
+                requestWakeLock();
+            }
+        });
+
     </script>
 
 </body>
