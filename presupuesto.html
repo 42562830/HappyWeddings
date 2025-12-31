@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Digital | Sonia</title>
+    
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           ESTILOS CORPORATIVOS & AJUSTES MÓVIL
+           ========================================= */
+        :root {
+            --bg-crema: #f8eff1;      
+            --bg-azul: #d6e8ef;       
+            --texto-principal: #2b2323; 
+            --texto-secundario: #5a5350; /* Un poco más oscuro para mejor lectura */
+            --blanco: #ffffff;
+            --acento: #e6bdc3;        
+            --verde-exito: #4a6d4d;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-crema);
+            color: var(--texto-principal);
+            font-family: 'Lato', sans-serif;
+            font-weight: 400; /* Subido de 300 a 400 para mejor lectura en móvil */
+            font-size: 18px;  /* AUMENTADO: Antes base 16px, ahora 18px */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 25px; /* Más aire lateral */
+        }
+
+        /* --- HEADER CON LOGO --- */
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: var(--blanco);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px rgba(43, 35, 35, 0.05);
+            margin-bottom: 50px;
+        }
+
+        .logo-img {
+            max-width: 180px; /* Tamaño controlado del logo */
+            height: auto;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            color: var(--texto-principal);
+        }
+
+        header p {
+            font-size: 1.1rem; /* Texto intro más grande */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--texto-secundario);
+        }
+
+        /* --- TARJETAS & SECCIONES --- */
+        section { margin-bottom: 70px; }
+
+        .card {
+            background: var(--blanco);
+            padding: 35px 30px; /* Más padding interno */
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem; /* Títulos más grandes */
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60px; height: 2px; /* Línea un poco más gruesa */
+            background: var(--acento);
+        }
+
+        p, li {
+            font-size: 1.05rem; /* Asegura legibilidad */
+        }
+
+        /* --- VIDEO REEL --- */
+        .video-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            aspect-ratio: 9/16;
+            position: relative;
+        }
+        
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- MOCKUP IPHONE CSS --- */
+        .mockup-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+            perspective: 1000px;
+        }
+
+        .iphone-mockup {
+            width: 290px; 
+            height: 600px;
+            background: #151515;
+            border-radius: 45px;
+            padding: 14px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+            position: relative;
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .iphone-mockup:hover {
+            transform: rotateY(0) rotateX(0);
+        }
+
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            /* Fix para esquinas redondeadas en Safari */
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        .iphone-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 110px; height: 28px;
+            background: #151515;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            z-index: 10;
+        }
+
+        .website-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none; 
+            background: white;
+        }
+
+        .mockup-overlay-btn {
+            position: absolute;
+            bottom: 40px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.98);
+            color: var(--texto-principal);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            z-index: 20;
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+        
+        .mockup-overlay-btn:hover {
+            transform: translateX(-50%) scale(1.08);
+        }
+
+        /* --- PRECIOS (MEJORADOS) --- */
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Alineación arriba por si el texto ocupa 2 líneas */
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .price-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .concept h4 { 
+            font-size: 1.3rem; 
+            margin-bottom: 8px; 
+            font-weight: 600;
+        }
+        .concept span { 
+            font-size: 0.95rem; 
+            color: var(--texto-secundario); 
+            display: block; 
+            line-height: 1.4;
+        }
+        
+        .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .total-box {
+            background: var(--bg-azul);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .total-box h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .total-price { font-size: 3.5rem; font-weight: 600; color: var(--texto-principal); line-height: 1; margin: 10px 0; }
+
+        /* --- HOSTINGER --- */
+        .hostinger-box {
+            background: #673de6;
+            color: white;
+            padding: 35px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(103, 61, 230, 0.3);
+        }
+        .hostinger-box h3 { color: white; font-size: 1.8rem; margin-bottom: 15px; }
+        .hostinger-box p { color: rgba(255,255,255,0.9); font-size: 1rem; }
+        
+        /* --- BOTONES GRANDES --- */
+        .btn-action {
+            display: block;
+            width: 100%;
+            padding: 18px; /* Botón más alto */
+            background: var(--texto-principal);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1rem; /* Texto botón más grande */
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: 25px;
+            border: 2px solid var(--texto-principal);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-action:active { transform: scale(0.98); }
+
+        .btn-action:hover {
+            background: transparent;
+            color: var(--texto-principal);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--texto-principal);
+            border: 2px solid var(--texto-principal);
+        }
+        
+        .btn-outline:hover { background: var(--texto-principal); color: white; }
+
+        .btn-white {
+            background: white; color: #673de6; border: none;
+        }
+        .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+
+        /* --- ANIMACIONES --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header class="reveal">
+        <div class="container">
+            <!-- LOGO INTEGRADO -->
+            <img src="Logo.png" alt="Happy Weddings Logo" class="logo-img">
+            <h1>Hola, Sonia</h1>
+            <p>Tu nueva identidad digital</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECCIÓN 1: EL REEL -->
+        <section class="reveal">
+            <h2 class="section-title">01. IA & Storytelling</h2>
+            <p style="text-align: center; margin-bottom: 25px; color: var(--texto-secundario);">
+                Esto no es un simple vídeo. Es la fusión de tus fotos con <strong>Inteligencia Artificial</strong> (Kling + ElevenLabs) para dar vida a los momentos estáticos.
+            </p>
+            
+            <div class="video-container">
+                <!-- VIDEO INSERTADO -->
+                <video controls autoplay muted loop playsinline>
+                     <source src="https://42562830.github.io/HappyWeddings/reel_low.mp4" type="video/mp4">
+                     Tu navegador no soporta video.
+                </video>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: MOCKUP 3D -->
+        <section class="reveal">
+            <h2 class="section-title">02. Tu Web (Preview)</h2>
+            
+            <p style="text-align: center; color: var(--texto-secundario); margin-bottom: 10px;">
+                Así se ve tu nueva casa digital. Diseño editorial, minimalista y rápido.
+            </p>
+
+            <!-- EL MOCKUP DEL IPHONE -->
+            <div class="mockup-wrapper">
+                <div class="iphone-mockup">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen">
+                        <!-- Cargamos tu web de GitHub aquí dentro -->
+                        <iframe src="https://42562830.github.io/HappyWeddings/" class="website-frame"></iframe>
+                        
+                        <!-- Botón flotante -->
+                        <a href="https://42562830.github.io/HappyWeddings/" target="_blank" class="mockup-overlay-btn">
+                            <i class="fas fa-external-link-alt"></i> Ver Web Completa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: -30px; padding-top: 50px;">
+                <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 20px;">¿Qué incluye?</h3>
+                <ul style="list-style: none; font-size: 1rem;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-bolt" style="color: var(--acento); margin-right: 12px;"></i> <strong>Velocidad Extrema:</strong> Sin tiempos de carga.</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-film" style="color: var(--acento); margin-right: 12px;"></i> <strong>Galería Netflix:</strong> Scroll horizontal suave.</li>
+                    <li><i class="fas fa-mobile-alt" style="color: var(--acento); margin-right: 12px;"></i> <strong>Mobile First:</strong> Pensada para verse en el móvil.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PRESUPUESTO -->
+        <section class="reveal">
+            <h2 class="section-title">03. Inversión Pack Lanzamiento</h2>
+            <div class="card" style="border: 1px solid var(--acento);">
+                
+                <!-- Item 1 -->
+                <div class="price-row">
+                    <div class="concept">
+                        <h4>Diseño & Desarrollo Web</h4>
+                        <span>Maquetación a medida + Galería</span>
+                    </div>
+                    <div class="amount">350€</div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="price-row">
+                    <div class="concept">
+                        <h4>Reel IA Lanzamiento</h4>
+                        <span>Animación Kling + Voz ElevenLabs</span>
+                    </div>
+                    <div class="amount">100€</div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="price-row">
+                    <div class="concept">
+                        <h4>Configuración Servidor</h4>
+                        <span>Puesta en marcha Hostinger</span>
+                    </div>
+                    <div class="amount">Incluido</div>
+                </div>
+
+                <!-- Total -->
+                <div class="total-box">
+                    <h3>Total Pack Amiga</h3>
+                    <div class="total-price">450€</div>
+                    <span style="font-size: 0.95rem; opacity: 0.7;">(Precio mercado aprox: 900€)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: FUTURO -->
+        <section class="reveal">
+            <h2 class="section-title" style="font-size: 1.8rem;">¿Y el contenido mensual?</h2>
+            <p style="text-align: center; margin-bottom: 25px; color: var(--texto-secundario);">
+                Para mantener tu Instagram activo con esta calidad de IA:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="card" style="text-align: center; padding: 25px 15px;">
+                    <h4 style="margin-bottom: 8px;">A la carta</h4>
+                    <div style="font-size: 2rem; font-family: 'Cormorant Garamond'; color: var(--texto-principal); font-weight: 600;">60€</div>
+                    <span style="font-size: 0.85rem;">/ Video Reel</span>
+                </div>
+                <div class="card" style="text-align: center; padding: 25px 15px; background: var(--texto-principal); color: white;">
+                    <h4 style="margin-bottom: 8px; color: var(--acento);">Pack Mes</h4>
+                    <div style="font-size: 2rem; font-family: 'Cormorant Garamond'; color: white; font-weight: 600;">220€</div>
+                    <span style="font-size: 0.85rem; opacity: 0.8;">(4 Reels/mes)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: HOSTINGER -->
+        <section class="reveal" id="hosting">
+            <h2 class="section-title">Importante: El Alojamiento</h2>
+            <div class="hostinger-box">
+                <i class="fas fa-server" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.8;"></i>
+                <h3>Tu Terreno Digital</h3>
+                <p style="margin-bottom: 25px; opacity: 0.95; font-size: 1.05rem;">
+                    Igual que pagas el alquiler del estudio, la web necesita un "terreno" (Hosting) y una dirección (Dominio). <br><br>
+                    <strong>Recomendación:</strong> Plan Premium Hostinger.<br>
+                    Incluye Dominio GRATIS + Correos Corporativos (hola@happyweddings...).
+                </p>
+                <div style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px;">~3,99€<span style="font-size: 1.2rem; font-weight: 400;">/mes</span></div>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">(Se suele pagar anual o cuatrienal para ahorrar)</p>
+                
+                <a href="https://www.hostinger.es/hosting-web" target="_blank" class="btn-action btn-white">Ver Precios Hostinger</a>
+                <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.8;">
+                    *Esto lo pagas tú directamente a Hostinger para que las facturas estén a tu nombre. Yo te incluyo la configuración completa gratis.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 60px 20px; background: var(--texto-principal); color: white;">
+        <h3 style="color: white; margin-bottom: 25px; font-size: 1.8rem;">¿Empezamos?</h3>
+        <a href="https://wa.me/34000000000" class="btn-action" style="background: var(--acento); color: var(--texto-principal); border: none; max-width: 320px; margin: 0 auto; display: inline-block;">
+            <i class="fab fa-whatsapp"></i> Sí, quiero el pack
+        </a>
+        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">Creado con ♥ para Happy Weddings</p>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 50;
+            
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+
+</body>
+</html>
