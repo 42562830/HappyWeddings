@@ -1,19 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Weddings Spain | Film & Shooting</title>
-    <meta name="description" content="Fotografía y vídeo de bodas en España. Estilo documental y editorial. Capturamos tu historia de amor.">
-    
-    <!-- Fuentes Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Iconos FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fotografía y vídeo de boda en Castellón, Valencia y Alicante</title>
+<meta content="Equipo profesional especializado en bodas reales, con estilo natural, emocional y sin poses forzadas. Fotografía y vídeo de boda en Castellón, Valencia y Alicante." name="description"/>
+<!-- Open Graph / WhatsApp -->
+<meta content="website" property="og:type"/>
+<meta content="Fotografía y vídeo de boda en Castellón, Valencia y Alicante" property="og:title"/>
+<meta content="Equipo profesional especializado en bodas reales, con estilo natural, emocional y sin poses forzadas. Fotografía y vídeo de boda en Castellón, Valencia y Alicante." property="og:description"/>
+<!-- IMPORTANTE: URL absoluta para WhatsApp -->
+<meta content="https://42562830.github.io/HappyWeddings/images/boda-01/boda-01-09.jpg" property="og:image"/>
+<!-- Fuentes Premium -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Iconos FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
         /* =========================================
            1. VARIABLES Y CONFIGURACIÓN CORPORATIVA
            ========================================= */
@@ -27,7 +32,7 @@
             
             --padding-desktop: 100px 0;
             --padding-mobile: 60px 0; 
-            --container-width: 1400px; /* Más ancho para el carrusel */
+            --container-width: 1400px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -63,7 +68,6 @@
         /* =========================================
            2. COMPONENTES DE UI
            ========================================= */
-        
         .btn-editorial {
             display: inline-block;
             padding: 14px 35px;
@@ -116,116 +120,58 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
         .logo a { display: block; line-height: 0; }
-        .logo img {
-            height: 95px;
-            width: auto;
-            transition: height 0.4s ease;
-        }
+        .logo img { height: 95px; width: auto; transition: height 0.4s ease; }
         header.scrolled .logo img { height: 70px; } 
 
-        .desktop-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            align-items: center;
-        }
-
+        .desktop-nav ul { display: flex; list-style: none; gap: 40px; align-items: center; }
         .desktop-nav a {
-            text-decoration: none;
-            color: var(--texto-principal);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            position: relative;
+            text-decoration: none; color: var(--texto-principal); font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 1.5px; position: relative;
         }
-
         .desktop-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px; left: 0; width: 0; height: 1px;
-            background: var(--texto-principal);
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px;
+            background: var(--texto-principal); transition: width 0.3s ease;
         }
         .desktop-nav a:hover::after { width: 100%; }
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001; 
-            padding: 10px;
-        }
+        .hamburger { display: none; cursor: pointer; z-index: 1001; padding: 10px; }
         .hamburger div {
-            width: 30px; height: 2px;
-            background-color: var(--texto-principal);
-            margin: 6px 0;
-            transition: all 0.3s ease;
+            width: 30px; height: 2px; background-color: var(--texto-principal);
+            margin: 6px 0; transition: all 0.3s ease;
         }
 
         /* Menú Móvil */
         .mobile-nav {
-            position: fixed;
-            top: 0; right: -100%;
-            width: 100%; height: 100vh;
-            background: var(--bg-crema); 
-            display: flex;
-            flex-direction: column;
-            transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-            z-index: 2000;
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: var(--bg-crema); display: flex; flex-direction: column;
+            transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 2000;
         }
         .mobile-nav.active { right: 0; }
-
         .mobile-nav-header {
-            width: 100%;
-            padding-top: 60px;
-            padding-bottom: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            margin-bottom: 20px;
+            width: 100%; padding: 60px 20px 20px; display: flex;
+            justify-content: center; align-items: center; position: relative; margin-bottom: 20px;
         }
         .mobile-logo { width: 160px; height: auto; max-width: 60%; display: block; }
-
         .close-btn {
-            background: none; border: none; font-size: 2.5rem;
-            color: var(--texto-principal); cursor: pointer;
-            position: absolute; right: 30px; top: 55px;
-            padding: 10px; transition: transform 0.3s ease;
+            background: none; border: none; font-size: 2.5rem; color: var(--texto-principal);
+            cursor: pointer; position: absolute; right: 30px; top: 55px; padding: 10px;
         }
-        .close-btn:hover { transform: rotate(90deg); }
-
         .mobile-nav-links {
-            flex: 1; display: flex; flex-direction: column;
-            justify-content: flex-start; padding-top: 20px; align-items: center;
-            list-style: none; overflow-y: auto;
+            flex: 1; display: flex; flex-direction: column; justify-content: flex-start;
+            padding-top: 20px; align-items: center; list-style: none; overflow-y: auto;
         }
         .mobile-nav li { margin: 15px 0; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
         .mobile-nav.active li { opacity: 1; transform: translateY(0); }
-        .mobile-nav.active li:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-nav.active li:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-nav.active li:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-nav.active li:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-nav.active li:nth-child(5) { transition-delay: 0.5s; }
-
         .mobile-nav a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem; color: var(--texto-principal);
-            text-decoration: none; position: relative;
+            font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+            color: var(--texto-principal); text-decoration: none; position: relative;
         }
         .mobile-nav a::after {
             content: ''; position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%);
             width: 0; height: 1px; background: var(--acento); transition: width 0.3s;
         }
-        .mobile-nav a:hover::after { width: 50%; }
 
         /* =========================================
            4. SECCIONES PRINCIPALES
@@ -242,29 +188,77 @@
         @keyframes zoomEffect { from { transform: scale(1); } to { transform: scale(1.1); } }
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.15); 
+            /* Overlay más inteligente para mejorar legibilidad sin oscurecer toda la foto */
+            background:
+                radial-gradient(circle at 50% 38%,
+                    rgba(0,0,0,0.55) 0%,
+                    rgba(0,0,0,0.28) 45%,
+                    rgba(0,0,0,0.18) 100%);
         }
         .hero-content {
-            position: relative; z-index: 2; text-align: center;
-            color: var(--blanco); padding: 0 20px;
+            position: relative; z-index: 2; text-align: center; color: var(--blanco);
+            padding: 0 20px;
+            max-width: 980px;
+            margin: 0 auto;
         }
-        .hero-content h1 {
+        /* Scrim (velo) detrás del bloque de texto: mejora lectura en fotos con confeti/alto contraste */
+        .hero-content::before{
+  content:"";
+  position:absolute;
+  left: -18px; right: -18px;
+  top: -14px; bottom: -18px;
+  /* Scrim sin desenfoque (no "embarra" la foto) */
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.32) 0%,
+    rgba(0,0,0,0.20) 55%,
+    rgba(0,0,0,0.14) 100%);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 50px rgba(0,0,0,0.35);
+  border-radius: 18px;
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 768px){
+  .hero-content::before{
+    left: -14px; right: -14px;
+    top: -12px; bottom: -14px;
+    background: linear-gradient(to bottom,
+      rgba(0,0,0,0.26) 0%,
+      rgba(0,0,0,0.16) 60%,
+      rgba(0,0,0,0.12) 100%);
+  }
+}
+        
+        /* ESTILOS SEO INVISIBLE */
+        .seo-h1 {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+        .visual-h1 {
+            font-family: 'Cormorant Garamond', serif; font-weight: 400;
             font-size: clamp(3rem, 8vw, 6rem); font-style: italic;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin-bottom: 20px;
-        }
+            text-shadow:
+                0 6px 28px rgba(0,0,0,0.55),
+                0 2px 10px rgba(0,0,0,0.35); margin-bottom: 20px; display: block;
+          -webkit-text-stroke: 0.6px rgba(0,0,0,0.35);
+}
+
+
         .hero-content p {
             font-size: clamp(1rem, 3vw, 1.2rem); text-transform: uppercase;
-            letter-spacing: 4px; margin-bottom: 40px;
+            letter-spacing: 2.6px; margin-bottom: 40px;
+            font-weight: 400;
+            text-shadow: 0 4px 18px rgba(0,0,0,0.65);
+          -webkit-text-stroke: 0.4px rgba(0,0,0,0.35);
+}
+
+        @media (max-width: 768px){
+            .hero-content p{ letter-spacing: 2px; }
         }
 
         .about { padding: var(--padding-desktop); }
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-        }
-        .about-img {
-            width: 100%; height: auto; border-radius: 200px 200px 0 0;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-img { width: 100%; height: auto; border-radius: 200px 200px 0 0; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .quote {
             font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
             color: var(--texto-secundario); font-style: italic;
@@ -272,261 +266,94 @@
         }
 
         .services { background-color: var(--bg-crema); padding: var(--padding-desktop); }
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .service-card {
-            background: var(--blanco); padding: 50px 30px; text-align: center;
-            border: 1px solid rgba(0,0,0,0.02); transition: transform 0.3s ease;
+            background: var(--blanco); padding: 0 !important; overflow: hidden;
+            text-align: left; border: 1px solid rgba(0,0,0,0.02); transition: transform 0.3s ease;
         }
         .service-card:hover { transform: translateY(-10px); }
+        .service-img-holder { width: 100%; height: 250px; overflow: hidden; }
+        .service-img-holder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .service-card:hover .service-img-holder img { transform: scale(1.1); }
+        .service-content { padding: 40px; text-align: center; }
         .service-number {
             font-family: 'Cormorant Garamond', serif; font-size: 3rem;
             color: var(--acento); opacity: 0.5; margin-bottom: 10px;
         }
 
-        /* Ajuste para las tarjetas con imagen */
-        .service-card {
-            padding: 0 !important; /* Quitamos el padding general para que la foto toque los bordes */
-            overflow: hidden; /* Para que la imagen respete los bordes redondeados si los hubiera */
-            background: var(--blanco);
-            text-align: left; /* Alineación más elegante */
-        }
-
-        .service-img-holder {
-            width: 100%;
-            height: 250px; /* Altura fija para la foto */
-            overflow: hidden;
-        }
-
-        .service-img-holder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Recorte inteligente */
-            transition: transform 0.6s ease;
-        }
-
-        /* Efecto zoom al pasar el ratón por la tarjeta */
-        .service-card:hover .service-img-holder img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 40px; /* El padding va ahora solo en el texto */
-            text-align: center;
-        }
-
         /* =========================================
            5. NUEVA GALERÍA: SCROLL HORIZONTAL
            ========================================= */
-        .portfolio { 
-            padding: var(--padding-desktop);
-            overflow: visible; /* no recortar el carrusel */
-        }
-        
-        /* Contenedor Flex para Scroll Horizontal */
+        .portfolio { padding: var(--padding-desktop); overflow: visible; }
         .gallery-scroll-container {
-            display: flex;
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            gap: 30px;
-            padding: 0 30px 18px;
-            scroll-padding-inline: 30px;
-            scroll-snap-type: x proximity; /* evita bloqueos y saltos raros */
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--acento) transparent;
-            scroll-behavior: smooth;
-            cursor: grab;
+            display: flex; width: 100%; overflow-x: auto; overflow-y: hidden;
+            gap: 30px; padding: 0 30px 18px; scroll-padding-inline: 30px;
+            scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin; scrollbar-color: var(--acento) transparent;
+            scroll-behavior: smooth; cursor: grab;
         }
-
-        /* En escritorio (ratón/trackpad) desactivamos el snap para que el movimiento con rueda/drag sea fluido
-           y no “luche” con el navegador (Chrome es especialmente sensible aquí). */
         @media (pointer: fine) {
-            .gallery-scroll-container {
-                scroll-snap-type: none;
-                scroll-behavior: auto;
-            }
-            .gallery-item {
-                scroll-snap-align: unset;
-            }
+            .gallery-scroll-container { scroll-snap-type: none; scroll-behavior: auto; }
+            .gallery-item { scroll-snap-align: unset; }
         }
-
         .gallery-scroll-container:active { cursor: grabbing; }
-
-        /* Personalización Scrollbar Webkit */
-        .gallery-scroll-container::-webkit-scrollbar { height: 8px; }
-        .gallery-scroll-container::-webkit-scrollbar-track { background: transparent; }
-        .gallery-scroll-container::-webkit-scrollbar-thumb { background-color: var(--acento); border-radius: 10px; }
-        .gallery-slider-wrap{
-            width: 100%;
-            padding: 0 30px;
-            margin-top: 10px;
-        }
-        #gallery-slider{
-            width: 100%;
-            height: 10px;
-            background: transparent;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        #gallery-slider::-webkit-slider-runnable-track{
-            height: 6px;
-            border-radius: 999px;
-            background: rgba(230,189,195,0.35);
-        }
-        #gallery-slider::-webkit-slider-thumb{
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 999px;
-            background: var(--acento);
-            border: 2px solid rgba(255,255,255,0.85);
-            margin-top: -6px;
-        }
-        #gallery-slider::-moz-range-track{
-            height: 6px;
-            border-radius: 999px;
-            background: rgba(230,189,195,0.35);
-        }
-        #gallery-slider::-moz-range-thumb{
-            width: 18px;
-            height: 18px;
-            border-radius: 999px;
-            background: var(--acento);
-            border: 2px solid rgba(255,255,255,0.85);
-        }
-
-
-        /* Personalización Scrollbar Webkit */
         .gallery-scroll-container::-webkit-scrollbar { height: 6px; }
         .gallery-scroll-container::-webkit-scrollbar-track { background: transparent; }
         .gallery-scroll-container::-webkit-scrollbar-thumb { background-color: var(--acento); border-radius: 10px; }
-
+        .gallery-slider-wrap { width: 100%; padding: 0 30px; margin-top: 10px; }
+        #gallery-slider { width: 100%; height: 10px; background: transparent; -webkit-appearance: none; appearance: none; }
+        #gallery-slider::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; background: rgba(230,189,195,0.35); }
+        #gallery-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 18px; height: 18px;
+            border-radius: 999px; background: var(--acento); border: 2px solid rgba(255,255,255,0.85); margin-top: -6px;
+        }
         .gallery-item {
-            flex: 0 0 clamp(320px, 34vw, 720px);
-            width: clamp(320px, 34vw, 720px);
-            height: 500px;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            scroll-snap-align: start;
-            border-radius: 4px;
+            flex: 0 0 clamp(320px, 34vw, 720px); width: clamp(320px, 34vw, 720px);
+            height: 500px; position: relative; cursor: pointer; overflow: hidden;
+            scroll-snap-align: start; border-radius: 4px;
         }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Recortar para llenar */
-            transition: transform 0.8s ease; /* Zoom lento y suave */
-        }
-        
-        /* Efecto Zoom al pasar el ratón */
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
         .gallery-item:hover img { transform: scale(1.1); }
-        
         .gallery-info {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
+            position: absolute; bottom: 0; left: 0; width: 100%;
             background: linear-gradient(to top, rgba(43,35,35,0.9), transparent);
-            color: var(--blanco);
-            padding: 30px;
-            transition: opacity 0.3s ease;
+            color: var(--blanco); padding: 30px; transition: opacity 0.3s ease;
         }
-        
         .gallery-info h4 { font-size: 1.8rem; margin-bottom: 5px; }
 
-        /* =========================================
-           6. MODAL (LIGHTBOX) ARREGLADO
-           ========================================= */
+        /* Lightbox */
         .lightbox-modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(20, 20, 20, 0.98); /* Fondo casi negro para contraste */
-            z-index: 3000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(20, 20, 20, 0.98); z-index: 3000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
         }
-
         .lightbox-modal.open { opacity: 1; pointer-events: auto; }
-
-        .lightbox-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-image {
-            max-height: 90vh; /* Altura máxima */
-            max-width: 90vw;  /* Ancho máximo */
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            object-fit: contain;
-            user-select: none;
-        }
-
+        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+        .lightbox-image { max-height: 90vh; max-width: 90vw; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain; user-select: none; }
         .lightbox-caption {
-            position: absolute;
-            bottom: 20px;
-            color: var(--blanco);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 15px;
-            border-radius: 20px;
+            position: absolute; bottom: 20px; color: var(--blanco);
+            font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+            letter-spacing: 1px; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 20px;
         }
-
-        /* --- BOTONES DEL MODAL (POSICIÓN FIJA A PANTALLA) --- */
-        /* Esto soluciona el problema de que desaparezcan */
-        
         .lightbox-btn {
-            position: fixed; /* FIJO A LA PANTALLA, NO A LA IMAGEN */
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1); /* Fondo sutil para verse sobre blanco */
-            border: none;
-            color: var(--blanco);
-            font-size: 2rem;
-            cursor: pointer;
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s;
-            z-index: 3005; /* Encima de todo */
+            position: fixed; top: 50%; transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1); border: none; color: var(--blanco);
+            font-size: 2rem; cursor: pointer; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s; z-index: 3005;
         }
-
         .lightbox-btn:hover { background: rgba(255, 255, 255, 0.3); transform: translateY(-50%) scale(1.1); }
-        
         .lightbox-prev { left: 30px; }
         .lightbox-next { right: 30px; }
-
         .lightbox-close {
-            position: fixed; /* FIJO ARRIBA A LA DERECHA */
-            top: 30px; right: 30px;
-            color: var(--blanco);
-            font-size: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            width: 50px; height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s;
-            z-index: 3005;
+            position: fixed; top: 30px; right: 30px; color: var(--blanco);
+            font-size: 2rem; background: rgba(255, 255, 255, 0.1); width: 50px; height: 50px;
+            border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center;
+            justify-content: center; transition: all 0.3s; z-index: 3005;
         }
-        .lightbox-close:hover { background: rgba(255, 255, 255, 0.3); transform: rotate(90deg); }
 
-        /* =========================================
-           7. CONTACTO & FOOTER
-           ========================================= */
+        /* Contact & Footer */
         .contact { background-color: var(--bg-azul); padding: var(--padding-desktop); }
         .contact-wrapper {
             background: var(--blanco); padding: 60px; max-width: 800px; margin: 0 auto;
@@ -539,18 +366,12 @@
         }
         .form-control {
             width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #ddd;
-            font-family: 'Lato', sans-serif; font-size: 1rem; background: transparent;
-            transition: border-color 0.3s;
+            font-family: 'Lato', sans-serif; font-size: 1rem; background: transparent; transition: border-color 0.3s;
         }
         .form-control:focus { outline: none; border-bottom-color: var(--texto-principal); }
 
-        footer {
-            background: var(--texto-principal); color: var(--bg-crema);
-            padding: 60px 0 20px; text-align: center;
-        }
-        .social-icons a {
-            color: var(--bg-crema); margin: 0 15px; font-size: 1.2rem; transition: color 0.3s;
-        }
+        footer { background: var(--texto-principal); color: var(--bg-crema); padding: 60px 0 20px; text-align: center; }
+        .social-icons a { color: var(--bg-crema); margin: 0 15px; font-size: 1.2rem; transition: color 0.3s; }
         .social-icons a:hover { color: var(--acento); }
 
         .whatsapp-float {
@@ -563,339 +384,487 @@
         }
         .whatsapp-float:hover { background-color: var(--acento); transform: scale(1.1); }
 
-        /* =========================================
-           8. RESPONSIVE
-           ========================================= */
         @media (max-width: 1024px) {
             .about-grid { gap: 40px; }
             .lightbox-prev { left: 15px; width: 45px; height: 45px; font-size: 1.5rem; }
             .lightbox-next { right: 15px; width: 45px; height: 45px; font-size: 1.5rem; }
             .lightbox-close { top: 20px; right: 20px; width: 40px; height: 40px; }
         }
-
         @media (max-width: 768px) {
             .desktop-nav { display: none; }
             .hamburger { display: block; }
-            
             .logo img { height: 80px; } 
             header.scrolled .logo img { height: 60px; }
-            
             .about, .services, .portfolio, .contact { padding: var(--padding-mobile); }
-
             .hero-content h1 { font-size: 3.5rem; }
             .about-grid { grid-template-columns: 1fr; }
             .contact-wrapper { padding: 30px 20px; }
-            
-            /* Ajuste Galería Móvil */
             .gallery-item { min-width: 85vw; height: 60vh; }
             .gallery-scroll-container { gap: 15px; padding-left: 20px; padding-right: 20px; }
-            
             .gallery-info { padding: 20px; }
             .gallery-info h4 { font-size: 1.5rem; }
         }
 
-        .reveal {
-            opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out;
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
+    
+
+        /* =========================================
+   AJUSTES: VISIBILIDAD HEADER SOBRE HERO
+   ========================================= */
+header:not(.scrolled) {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0));
+}
+header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+}
+header:not(.scrolled) .desktop-nav a {
+    color: rgba(255,255,255,0.92);
+    text-shadow: 0 2px 14px rgba(0,0,0,0.45);
+}
+header:not(.scrolled) .desktop-nav a::after { background: rgba(255,255,255,0.9); }
+header:not(.scrolled) .hamburger div { background-color: rgba(255,255,255,0.92); }
+
+/* =========================================
+           BLOQUE: SERVICIOS DISPONIBLES (FUERA DEL GRID)
+           ========================================= */
+        .services-available {
+            margin-top: 60px;
+            background: var(--blanco);
+            padding: 45px;
+            text-align: left;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .services-available h3{
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+            color: var(--texto-principal);
+        }
+        .two-col-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            gap: 10px 40px;
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+        }
+        .two-col-list li::before{
+            content: "•";
+            color: var(--acento);
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        @media (max-width: 820px){
+            .two-col-list{ grid-template-columns: 1fr; }
+        }
+
+        /* =========================================
+           SECCIÓN: POR QUÉ ELEGIR
+           ========================================= */
+        .why { padding: var(--padding-desktop); background: var(--blanco); }
+        .why-grid{ max-width: 900px; margin: 0 auto; }
+        .why-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 40px;
+            color: var(--texto-secundario);
+            font-size: 1rem;
+        }
+        .why-list li{
+            padding-left: 18px;
+            position: relative;
+        }
+        .why-list li::before{
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--acento);
+        }
+        @media (max-width: 820px){
+            .why-list{ grid-template-columns: 1fr; }
+        }
+
+        /* =========================================
+           SECCIÓN: ZONAS
+           ========================================= */
+        .zones { background-color: var(--bg-azul); padding: var(--padding-desktop); }
+        .zones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .zone-card{
+            background: var(--blanco);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        .zone-card:hover{ transform: translateY(-10px); }
+        .zone-img{ width: 100%; height: 220px; overflow: hidden; }
+        .zone-img img{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .zone-card:hover .zone-img img{ transform: scale(1.06); }
+        .zone-content{ padding: 40px; text-align: left; }
+        .zone-content h3{
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+            color: var(--texto-principal);
+        }
+        .zone-content p{ color: var(--texto-secundario); font-size: 0.95rem; line-height: 1.7; }
+
+        /* =========================================
+           CONTACTO: LINKS + CIERRE
+           ========================================= */
+        .contact-links{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 25px 0;
+        }
+        
+        /* En escritorio, los accesos rápidos duplican el footer: ocultamos para una experiencia más limpia */
+        @media (min-width: 992px){
+            #contact-links{ display: none; }
+        }
+        .contact-pill{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 999px;
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: rgba(255,255,255,0.7);
+        }
+        .contact-pill:hover{
+            border-color: var(--acento);
+        }
+        .contact-close{
+            margin-top: 28px;
+            text-align: center;
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+    /* =========================================
+   MICRO-PULIDO: RITMO TIPOGRÁFICO, FOCUS, MOTION
+   (sin cambiar estructura ni estética)
+   ========================================= */
+:root{
+    --radius-soft: 6px;
+    --shadow-card: 0 10px 35px rgba(0,0,0,0.035);
+    --shadow-card-hover: 0 18px 55px rgba(0,0,0,0.06);
+    --focus-ring: rgba(230,189,195,0.65);
+}
+
+/* Anclas: evita que el header tape los títulos al navegar */
+section[id] { scroll-margin-top: 120px; }
+@media (max-width: 768px){ section[id]{ scroll-margin-top: 95px; } }
+
+/* Tipografía: líneas un pelín más “editorial” */
+.about-text p,
+.zone-content p { max-width: 62ch; }
+
+/* Tarjetas: menos “plantilla”, más sutil */
+.service-card,
+.zone-card,
+.services-available,
+.contact-wrapper { border-radius: var(--radius-soft); }
+
+.service-card,
+.zone-card,
+.services-available { box-shadow: var(--shadow-card); }
+
+.service-card:hover,
+.zone-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card-hover); }
+
+/* Imágenes: coherencia de borde (sin cambiar composición) */
+.gallery-item { border-radius: var(--radius-soft); }
+.service-img-holder img,
+.zone-img img { will-change: transform; }
+
+/* Estados de foco (accesibilidad premium, sin cambiar look) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 10px;
+}
+.form-control:focus-visible{
+    outline: none;
+    border-bottom-color: var(--texto-principal);
+    box-shadow: 0 10px 0 -9px var(--focus-ring);
+}
+
+/* Reduce tap highlight en móvil */
+a, button { -webkit-tap-highlight-color: transparent; }
+
+/* Motion: respeta “reducir movimiento” */
+@media (prefers-reduced-motion: reduce){
+    html { scroll-behavior: auto; }
+    .hero-bg { animation: none !important; }
+    .reveal { transition: none !important; }
+    .service-card, .zone-card, .gallery-item img { transition: none !important; }
+}
     </style>
 </head>
 <body>
+<!-- Navegación -->
+<header id="navbar">
+<div class="container nav-container">
+<div class="logo">
+<a href="#inicio">
+<img decoding="async" alt="Happy Weddings Spain" src="Logo.png"/>
+</a>
+</div>
+<nav class="desktop-nav">
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li><li><a href="#por-que-elegir">Por qué elegir</a></li>
+<li><a href="#servicios">Servicios</a></li><li><a href="#zonas">Zonas</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#contacto" style="border: 1px solid currentColor; padding: 8px 15px; border-radius: 20px;">Contacto</a></li>
+</ul>
+</nav>
+<div class="hamburger" id="hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="mobile-nav" aria-expanded="false">
+<div class="line1"></div><div class="line2"></div><div class="line3"></div>
+</div>
+</div>
+</header>
+<!-- Menú Móvil -->
+<div class="mobile-nav" id="mobile-nav">
+<div class="mobile-nav-header">
+<img decoding="async" alt="Happy Weddings Logo" class="mobile-logo" src="Logo.png"/>
+<button class="close-btn" onclick="toggleMenu()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<ul class="mobile-nav-links">
+<li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
+<li><a href="#nosotros" onclick="toggleMenu()">Nosotros</a></li><li><a href="#por-que-elegir" onclick="toggleMenu()">Por qué elegir</a></li>
+<li><a href="#servicios" onclick="toggleMenu()">Servicios</a></li><li><a href="#zonas" onclick="toggleMenu()">Zonas</a></li>
+<li><a href="#galeria" onclick="toggleMenu()">Galería</a></li>
+<li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
+</ul>
+</div>
+<!-- Hero -->
+<section class="hero" id="inicio">
+<img loading="eager" fetchpriority="high" decoding="async" alt="Boda portada" class="hero-bg" src="images/boda-02/boda-02-16.jpg"/>
+<div class="hero-overlay"></div>
+<div class="hero-content reveal">
+<!-- TRUCO SEO -->
+<h1 class="seo-h1">Fotografía y vídeo de boda en Castellón, Valencia y Alicante</h1>
+<span class="visual-h1">Fotografía y vídeo de boda en Castellón, Valencia y Alicante</span>
+<p>Equipo profesional especializado en bodas reales, con estilo natural, emocional y sin poses forzadas.</p>
+<a class="btn-editorial" href="https://api.whatsapp.com/send/?phone=34614297072&amp;text=Hola+Happy+Weddings" rel="noopener" style="color: white; border-color: white;" target="_blank">Ver Disponibilidad</a>
+</div>
+</section>
+<!-- Nosotros -->
+<section class="about" id="nosotros">
+<div class="container">
+<div class="about-grid">
+<div class="about-img-container reveal">
+<img loading="lazy" decoding="async" alt="Nuestra esencia" class="about-img" src="images/boda-04/boda-04-12.jpg"/>
+</div>
+<div class="about-text reveal">
+<div class="section-header" style="text-align: left;">
+<span>Quiénes somos</span>
+<h2>Happy Weddings</h2>
+</div><p style="margin-bottom: 20px; color: var(--texto-secundario);">Happy Weddings es un equipo de fotógrafos y videógrafos especializados en bodas, con más de 10 años de experiencia realizando fotografía y vídeo de boda en Castellón, Valencia y Alicante.</p><p style="margin-bottom: 0; color: var(--texto-secundario);">Trabajamos con parejas que buscan recuerdos auténticos, emotivos y naturales, cuidando cada momento del día de la boda desde la preparación hasta la fiesta.</p>
 
-    <!-- Navegación -->
-    <header id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="#inicio">
-                    <img src="Logo.png" alt="Happy Weddings Spain">
-                </a>
-            </div>
-            
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#contacto" style="border: 1px solid currentColor; padding: 8px 15px; border-radius: 20px;">Contacto</a></li>
-                </ul>
-            </nav>
 
-            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Menú Móvil -->
-    <div class="mobile-nav" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <img src="Logo.png" alt="Happy Weddings Logo" class="mobile-logo">
-            <button class="close-btn" onclick="toggleMenu()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <ul class="mobile-nav-links">
-            <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
-            <li><a href="#nosotros" onclick="toggleMenu()">Filosofía</a></li>
-            <li><a href="#servicios" onclick="toggleMenu()">Servicios</a></li>
-            <li><a href="#galeria" onclick="toggleMenu()">Historias</a></li>
-            <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
-        </ul>
-    </div>
 
-    <!-- Hero -->
-    <section id="inicio" class="hero">
-        <!-- CAMBIO AQUI: La foto de la cabina roja -->
-        <img src="images/boda-01/boda-01-09.jpg" alt="Boda portada" class="hero-bg">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h1>Film & Shooting</h1>
-            <p>Historias de amor sin guión</p>
-            <a href="https://api.whatsapp.com/send/?phone=34614297072&amp;text=Hola+Happy+Weddings%2C+me+gustaría+recibir+información+sobre+fotografía+y+video+de+bodas.+Gracias.&amp;type=phone_number&amp;app_absent=0" class="btn-editorial" style="color: white; border-color: white;" target="_blank" rel="noopener">Ver Disponibilidad</a>
-        </div>
-    </section>
-
-    <!-- Nosotros -->
-    <section id="nosotros" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-img-container reveal">
-                    <img src="images/boda-04/boda-04-12.jpg" alt="Nuestra esencia" class="about-img">
-                </div>
-                <div class="about-text reveal">
-                    <div class="section-header" style="text-align: left;">
-                        <span>Nuestra Esencia</span>
-                        <h2>Más allá de la foto perfecta</h2>
-                    </div>
-                    <p style="margin-bottom: 20px; color: var(--texto-secundario);">
-                        Somos cazadores de instantes. No buscamos la pose artificial, sino la lágrima que se escapa al veros por primera vez o la carcajada nerviosa durante los votos.
-                    </p>
-                    <div class="quote">
-                        "El amor no entiende de protocolos, solo de sentimientos. Celebramos tu historia, sea cual sea."
-                    </div>
-                    <p style="margin-bottom: 30px; color: var(--texto-secundario);">
-                        Con base en la Comunidad Valenciana (Valencia, Castellón y Alicante) y disponibles para desplazarnos por toda España donde haya una historia que contar.
-                    </p>
-                    <a href="#galeria" class="btn-editorial">Ver nuestros trabajos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <span>Qué hacemos</span>
-                <h2>Experiencias Visuales</h2>
-            </div>
-            <div class="services-grid">
-                
-                <!-- Servicio 1: FOTOGRAFÍA -->
-                <div class="service-card reveal">
-                    <!-- Imagen en lugar de Icono -->
-                    <div class="service-img-holder">
-                        <img src="images/boda-01/boda-01-07.jpg" alt="Fotografía de Boda">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-number">01</div>
-                        <h3>Wedding Photography</h3>
-                        <p style="color: var(--texto-secundario); font-size: 0.9rem;">Documentamos vuestro día de principio a fin. Sin límite de fotos, con edición de autor y galería privada online.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 2: CINE -->
-                <div class="service-card reveal">
-                    <div class="service-img-holder">
-                        <img src="images/boda-04/boda-04-34.jpg" alt="Cinematografía de Boda">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-number">02</div>
-                        <h3>Cinematography</h3>
-                        <p style="color: var(--texto-secundario); font-size: 0.9rem;">No es un vídeo de boda, es cine. Grabación 4K, audio profesional y drone incluido para planos espectaculares.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 3: EDITORIALES -->
-                <div class="service-card reveal">
-                    <div class="service-img-holder">
-                        <img src="images/boda-02/boda-02-19.jpg" alt="Sesión Editorial">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-number">03</div>
-                        <h3>Editoriales</h3>
-                        <p style="color: var(--texto-secundario); font-size: 0.9rem;">Sesiones Pre-Boda y Post-Boda. El momento perfecto para conectar con la cámara sin prisas y en localizaciones de ensueño.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERÍA (NUEVO DISEÑO CARRUSEL HORIZONTAL) -->
-    <section id="galeria" class="portfolio">
-        <!-- El contenedor es ancho completo para permitir scroll -->
-        <div class="section-header reveal">
-            <span>Journal</span>
-            <h2>Historias Reales</h2>
-        </div>
-        
-        <!-- Contenedor de Scroll Horizontal -->
-        <div class="gallery-scroll-container reveal" id="gallery-container">
-            <!-- Javascript llenará esto -->
-        </div>
-        <div class="gallery-slider-wrap reveal">
-            <input type="range" id="gallery-slider" min="0" max="0" value="0" aria-label="Deslizar galerías">
-        </div>
-    </section>
-
-    <!-- MODAL (LIGHTBOX) MEJORADO -->
-    <div class="lightbox-modal" id="lightbox">
-        <!-- BOTONES FIJOS EN PANTALLA -->
-        <button class="lightbox-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
-        <button class="lightbox-btn lightbox-prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
-        
-        <div class="lightbox-content">
-            <img src="" alt="Visor" class="lightbox-image" id="lightbox-img">
-            <div class="lightbox-caption" id="lightbox-caption">Boda</div>
-        </div>
-        
-        <button class="lightbox-btn lightbox-next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
-    </div>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="contact-wrapper reveal">
-                <div class="section-header">
-                    <span>Hablemos</span>
-                    <h2>¿Empezamos la aventura?</h2>
-                    <p style="color: var(--texto-secundario); margin-top: 10px; font-size: 0.9rem;">Agenda 2026/2027 Abierta</p>
-                </div>
-                
-                <form>
-                    <div class="form-group">
-                        <label>Vuestros Nombres</label>
-                        <input type="text" class="form-control" placeholder="Ej: Laura y Marc" required>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" placeholder="hola@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Teléfono</label>
-                            <input type="tel" class="form-control" placeholder="+34 ...">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Fecha y Lugar</label>
-                        <input type="text" class="form-control" placeholder="¿Cuándo y dónde?">
-                    </div>
-                    <div class="form-group">
-                        <label>Contadnos vuestra idea</label>
-                        <textarea class="form-control" rows="4" placeholder="¿Qué es lo más importante para vosotros en la boda?"></textarea>
-                    </div>
-                    <div class="text-center" style="margin-top: 40px;">
-                        <button type="submit" class="btn-editorial" style="width: 100%;">Enviar Mensaje</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div style="margin-bottom: 20px;">
-                 <img src="Logo.png" alt="Happy Weddings" style="height: 50px; opacity: 0.8;">
-            </div>
-            <div class="social-icons" style="margin-bottom: 30px;">
-                <a href="https://www.instagram.com/happyweddings.spain/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-vimeo-v"></i></a>
-            </div>
-            <p style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">© 2026 Happy Weddings Spain. Diseñado con amor.</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Flotante -->
-    <a href="https://api.whatsapp.com/send/?phone=34614297072&amp;text=Hola+Happy+Weddings%2C+me+gustaría+recibir+información+sobre+fotografía+y+video+de+bodas.+Gracias.&amp;type=phone_number&amp;app_absent=0" class="whatsapp-float" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script>
+</div>
+</div>
+</div>
+</section>
+<!-- Servicios -->
+<section class="services" id="servicios">
+<div class="container">
+<div class="section-header reveal">
+<span>Servicios</span>
+<h2>Fotografía y vídeo de boda</h2>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-img-holder">
+<img loading="lazy" decoding="async" alt="Fotografía de Boda" src="images/boda-01/boda-01-07.jpg"/>
+</div>
+<div class="service-content">
+<div class="service-number">01</div>
+<h3>Fotografía y vídeo del día completo</h3>
+<p style="color: var(--texto-secundario); font-size: 0.9rem;">Trabajamos con parejas que buscan recuerdos auténticos, emotivos y naturales, cuidando cada momento del día de la boda desde la preparación hasta la fiesta.</p>
+</div>
+</div>
+<div class="service-card reveal">
+<div class="service-img-holder">
+<img loading="lazy" decoding="async" alt="Cinematografía de Boda" src="images/boda-04/boda-04-34.jpg"/>
+</div>
+<div class="service-content">
+<div class="service-number">02</div>
+<h3>Álbum profesional y minis</h3>
+<p style="color: var(--texto-secundario); font-size: 0.9rem;">Trato cercano y personalizado. Especialistas exclusivamente en bodas. Estilo natural, emocional y sin poses forzadas.</p>
+</div>
+</div>
+<div class="service-card reveal">
+<div class="service-img-holder">
+<img loading="lazy" decoding="async" alt="Sesión Editorial" src="images/boda-02/boda-02-19.jpg"/>
+</div>
+<div class="service-content">
+<div class="service-number">03</div>
+<h3>Vídeo de boda con dron</h3>
+<p style="color: var(--texto-secundario); font-size: 0.9rem;">Experiencia en bodas civiles y religiosas. Packs completos desde 1.499 €.</p>
+</div>
+</div>
+</div><div class="services-available reveal" id="servicios-disponibles"><h3>Servicios disponibles</h3><ul class="two-col-list"><li>Fotografía y vídeo del día completo</li><li>Álbum profesional y minis</li><li>Vídeo de boda con dron</li><li>Sesión Preboda - Postboda</li><li>Happy print - Same day edit</li><li>Photomaton - Video 360 - Video confesionario</li></ul></div>
+</div>
+</section>
+<!-- GALERÍA (CON LOGICA DE SCROLL RESTAURADA) -->
+<section class="why" id="por-que-elegir"><div class="container"><div class="section-header reveal"><span>Por qué elegir</span><h2>Happy Weddings</h2></div><div class="why-grid"><ul class="why-list reveal"><li>Fotografía y vídeo integrados en un solo equipo</li><li>Especialistas exclusivamente en bodas</li><li>Trato cercano y personalizado</li><li>Estilo natural, emocional y sin poses forzadas</li><li>Experiencia en bodas civiles y religiosas</li><li>Packs completos desde 1.499 €</li></ul></div></div></section><section class="zones" id="zonas"><div class="container"><div class="section-header reveal"><span>Zonas donde trabajamos</span><h2>Castellón, Valencia y Alicante</h2></div><div class="zones-grid"><div class="zone-card reveal"><div class="zone-img"><img loading="lazy" decoding="async" alt="Fotógrafo de boda en Castellón" src="images/boda-02/boda-02-17.jpg"/></div><div class="zone-content"><h3>Fotógrafo de boda en Castellón</h3><p>Realizamos fotografía y vídeo de boda en Castellón y provincia, trabajando en fincas, masías, iglesias y celebraciones civiles. Nos adaptamos a cada pareja para capturar su boda con un estilo natural y cercano.</p></div></div><div class="zone-card reveal"><div class="zone-img"><img loading="lazy" decoding="async" alt="Fotógrafo de boda en Valencia" src="images/boda-03/boda-03-09.jpg"/></div><div class="zone-content"><h3>Fotógrafo de boda en Valencia</h3><p>Ofrecemos servicios de fotografía y vídeo de boda en Valencia, tanto en ciudad como en localidades cercanas. Cubrimos bodas civiles y religiosas, cuidando cada detalle y cada emoción del día.</p></div></div><div class="zone-card reveal"><div class="zone-img"><img loading="lazy" decoding="async" alt="Fotógrafo de boda en Alicante" src="images/boda-04/boda-04-13.jpg"/></div><div class="zone-content"><h3>Fotógrafo de boda en Alicante</h3><p>Trabajamos como fotógrafos y videógrafos de boda en Alicante, especialmente en bodas al aire libre, fincas y celebraciones junto al mar, creando recuerdos emocionales y auténticos.</p></div></div></div></div></section><section class="portfolio" id="galeria">
+<div class="section-header reveal">
+<span>Galería</span>
+<h2>Historias Reales</h2>
+</div>
+<div class="gallery-scroll-container reveal" id="gallery-container">
+<!-- JS -->
+</div>
+<div class="gallery-slider-wrap reveal">
+<input aria-label="Deslizar galerías" id="gallery-slider" max="0" min="0" type="range" value="0"/>
+</div>
+</section>
+<!-- MODAL -->
+<div class="lightbox-modal" id="lightbox">
+<button class="lightbox-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+<button class="lightbox-btn lightbox-prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+<div class="lightbox-content">
+<img loading="lazy" decoding="async" alt="Visor" class="lightbox-image" id="lightbox-img" src=""/>
+<div class="lightbox-caption" id="lightbox-caption">Boda</div>
+</div>
+<button class="lightbox-btn lightbox-next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+</div>
+<!-- Contacto (FORMSPREE INTEGRADO) -->
+<section class="contact" id="contacto">
+<div class="container">
+<div class="contact-wrapper reveal">
+<div class="section-header">
+<span>Contacto</span>
+<h2>Fotógrafos y videógrafos de boda en Castellón, Valencia y Alicante</h2>
+<p style="color: var(--texto-secundario); margin-top: 10px; font-size: 0.9rem;">Si estáis buscando un fotógrafo y videógrafo de boda en Castellón, Valencia o Alicante, estaremos encantados de escuchar vuestra historia y acompañaros en vuestro día.</p>
+</div>
+<!-- FORMSPREE: Código xojvqndl -->
+<div class="contact-links reveal" id="contact-links"><a class="contact-pill" href="https://www.instagram.com/happyweddings.spain/" rel="noopener" target="_blank">Instagram</a><a class="contact-pill" href="https://wa.me/34614297072" rel="noopener" target="_blank">WhatsApp</a><a class="contact-pill" href="mailto:happyweddings.spain@gmail.com">Email</a></div><form action="https://formspree.io/f/xojvqndl" method="POST">
+<!-- Redirección de vuelta a GitHub -->
+<input name="_next" type="hidden" value="https://42562830.github.io/HappyWeddings/gracias.html"/>
+<div class="form-group">
+<label>Vuestros Nombres</label>
+<input class="form-control" name="nombre" placeholder="Ej: Laura y Marc" required="" type="text"/>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div class="form-group">
+<label>Email</label>
+<input class="form-control" name="email" placeholder="hola@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>Teléfono</label>
+<input class="form-control" name="telefono" placeholder="+34 ..." type="tel"/>
+</div>
+</div>
+<div class="form-group">
+<label>Fecha y Lugar</label>
+<input class="form-control" name="fecha" placeholder="¿Cuándo y dónde?" type="text"/>
+</div>
+<div class="form-group">
+<label>Contadnos vuestra idea</label>
+<textarea class="form-control" name="mensaje" placeholder="¿Qué es lo más importante para vosotros en la boda?" rows="4"></textarea>
+</div>
+<div class="text-center" style="margin-top: 40px;">
+<button class="btn-editorial" style="width: 100%;" type="submit">Enviar Mensaje</button>
+</div>
+</form><p class="contact-close" id="contact-close">Fotógrafos y videógrafos de boda en Castellón, Valencia y Alicante.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div style="margin-bottom: 20px;">
+<img decoding="async" alt="Happy Weddings" src="Logo.png" style="height: 50px; opacity: 0.8;"/>
+</div>
+<div class="social-icons" style="margin-bottom: 30px;"><a href="https://www.instagram.com/happyweddings.spain/" rel="noopener" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/34614297072" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="mailto:happyweddings.spain@gmail.com"><i class="far fa-envelope"></i></a></div>
+<p style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">© 2026 Happy Weddings Spain. Diseñado con amor.</p>
+</div>
+</footer>
+<!-- WhatsApp Flotante -->
+<a class="whatsapp-float" href="https://api.whatsapp.com/send/?phone=34614297072&amp;text=Hola+Happy+Weddings" rel="noopener" target="_blank" aria-label="Abrir WhatsApp" title="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+<!-- Scripts (COMPLETOS CON TODA LA LÓGICA DE SCROLL) -->
+<script>
         // --- CONFIGURACIÓN DE LAS BODAS ---
-    // He añadido la propiedad 'portada' para que elijas la foto exacta que más venda
-    const historias = [
-        { 
-            id: "boda-01", 
-            titulo: "Ana & Carlos", 
-            lugar: "Alicante", 
-            n_fotos: 9, 
-            portada: "boda-01-08.jpg" // Luz atardecer
-        },
-        { 
-            id: "boda-02", 
-            titulo: "Elegancia Atemporal", // He cambiado el título para que pegue con la foto
-            lugar: "Valencia", 
-            n_fotos: 19, 
-            portada: "boda-02-13.jpg" // La foto del velo espectacular
-        },
-        { 
-            id: "boda-03", 
-            titulo: "Detalles & Tradición", 
-            lugar: "Madrid", 
-            n_fotos: 19, 
-            portada: "boda-03-01.jpg" // La textura del traje azul
-        },
-        { 
-            id: "boda-04", 
-            titulo: "Love by the Sea", 
-            lugar: "Sevilla", // (Ojo, la foto es de mar, ¿seguro es Sevilla? Si es costa, mejor poner la ciudad costera)
-            n_fotos: 37, 
-            portada: "boda-04-36.jpg" // Las novias con el mar
-        }
-    ];
+        const historias = [
+            { 
+                id: "boda-01", 
+                titulo: "Ana & Carlos", 
+                lugar: "Alicante", 
+                n_fotos: 9, 
+                portada: "boda-01-09.jpg" 
+            },
+            { 
+                id: "boda-02", 
+                titulo: "Elegancia Atemporal", 
+                lugar: "Valencia", 
+                n_fotos: 19, 
+                portada: "boda-02-13.jpg" 
+            },
+            { 
+                id: "boda-03", 
+                titulo: "Detalles & Tradición", 
+                lugar: "Castellón", 
+                n_fotos: 19, 
+                portada: "boda-03-01.jpg" 
+            },
+            { 
+                id: "boda-04", 
+                titulo: "Love by the Sea", 
+                lugar: "Altea (Alicante)", 
+                n_fotos: 37, 
+                portada: "boda-04-36.jpg" 
+            }
+        ];
 
-    // --- GENERADOR DE GALERÍA HORIZONTAL ---
-    const container = document.getElementById('gallery-container');
+        // --- GENERADOR DE GALERÍA HORIZONTAL ---
+        const container = document.getElementById('gallery-container');
 
-    historias.forEach(historia => {
-        // AHORA USA LA PORTADA ESPECÍFICA QUE HEMOS ELEGIDO
-        const portadaUrl = `images/${historia.id}/${historia.portada}`;
-        
-        const html = `
-            <div class="gallery-item" onclick="openGallery('${historia.id}')">
-                <img src="${portadaUrl}" alt="${historia.titulo}">
-                <div class="gallery-info">
-                    <h4>${historia.titulo}</h4>
-                    <span>${historia.lugar} · ${historia.n_fotos} Fotos</span>
+        historias.forEach(historia => {
+            const portadaUrl = `images/${historia.id}/${historia.portada}`;
+            const html = `
+                <div class="gallery-item" onclick="openGallery('${historia.id}')">
+                    <img loading="lazy" decoding="async" src="${portadaUrl}" alt="${historia.titulo}">
+                    <div class="gallery-info">
+                        <h4>${historia.titulo}</h4>
+                        <span>${historia.lugar} · ${historia.n_fotos} Fotos</span>
+                    </div>
                 </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', html);
-    });
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        });
 
         // --- INICIALIZACIÓN DE SCROLL (Chrome/Safari/Firefox) ---
-        // 1) Asegurar que el carrusel arranca al principio (evita 'salto' en Chrome)
         requestAnimationFrame(() => { container.scrollLeft = 0; });
 
-        // Detectar escritorio real (ratón + hover). En móvil/táctil dejamos el scroll nativo sin “hackear” eventos.
         const isDesktopPointer = (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-
         // 2) Convertir rueda vertical en desplazamiento horizontal (ratón)
-        //    Importante: NO bloquear el scroll vertical de la página cuando el carrusel
-        //    ya está en el inicio/fin. Así se evita la sensación de “web colgada”.
-        // 2) Rueda del ratón/trackpad: movimiento horizontal NATURAL sin “bloquear” el scroll vertical.
-        //    - NO hacemos preventDefault(): así la página sigue bajando/subiendo (cero sensación de “web colgada”).
-        //    - Añadimos inercia y suavizado para que el carrusel se mueva con sensación premium.
         let wheelTarget = null;
         let wheelRaf = null;
         let wheelVelocity = 0;
@@ -995,7 +964,7 @@
             didDrag = false;
         }, true);
 
-        // 4) Slider siempre visible (para usuarios sin scrollbar visible en macOS)
+        // 4) Slider siempre visible
         const slider = document.getElementById('gallery-slider');
         const syncSliderMax = () => {
             const max = Math.max(0, container.scrollWidth - container.clientWidth);
@@ -1071,8 +1040,11 @@
         // --- FUNCIONALIDADES STANDARD ---
         const mobileNav = document.getElementById('mobile-nav');
         function toggleMenu() {
-            mobileNav.classList.toggle('active');
-        }
+    const isActive = mobileNav.classList.toggle('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
+    const burger = document.getElementById('hamburger');
+    if (burger) burger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+}
 
         window.addEventListener('scroll', () => {
             const header = document.getElementById('navbar');
@@ -1096,7 +1068,26 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
-    </script>
 
+// Accesibilidad / UX: teclado
+const burgerEl = document.getElementById('hamburger');
+if (burgerEl) {
+    burgerEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+    });
+}
+
+// Cerrar con ESC (menú y lightbox)
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (lightbox.classList.contains('open')) closeModal();
+    if (mobileNav.classList.contains('active')) toggleMenu();
+});
+
+// Cerrar lightbox clicando fuera de la imagen
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeModal();
+});
+    </script>
 </body>
 </html>
