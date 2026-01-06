@@ -159,8 +159,18 @@
             cursor: pointer; position: absolute; right: 30px; top: 55px; padding: 10px;
         }
         .mobile-nav-links {
-            flex: 1; display: flex; flex-direction: column; justify-content: flex-start;
-            padding-top: 20px; align-items: center; list-style: none; overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            align-items: center;
+            list-style: none;
+            overflow-y: auto;
+            max-height: calc(100vh - 160px);
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
         }
         .mobile-nav li { margin: 15px 0; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
         .mobile-nav.active li { opacity: 1; transform: translateY(0); }
@@ -810,7 +820,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
         /* El enlace "Ver galería" convertido en botón fantasma o texto brillante */
         #galeria .zone-content p:last-child {
             margin-top: 15px;
-            color: #e6bdc3; /* Color acento */
+            color: var(--acento) !important;
             font-family: 'Lato', sans-serif;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -896,13 +906,16 @@ a, button { -webkit-tap-highlight-color: transparent; }
 <div class="container">
 <div class="about-grid">
 <div class="about-img-container reveal">
-<img alt="Nuestra esencia" class="about-img" decoding="async" loading="lazy" src="images/boda-04/boda-04-12.jpg"/>
+<img alt="Enrique y Sonia, equipo de Happy Weddings" class="about-img" decoding="async" loading="lazy" src="nosotros.jpg"/>
 </div>
 <div class="about-text reveal">
 <div class="section-header" style="text-align: left;">
 <span>Quiénes somos</span>
 <h2>Happy Weddings</h2>
-</div><p style="margin-bottom: 20px; color: var(--texto-secundario);">Somos un equipo de fotógrafos y videógrafos de boda en la Comunidad Valenciana. Llevamos años contando historias reales con un estilo cuidado y sin interrupciones.</p><p style="margin-bottom: 0; color: var(--texto-secundario);">Nos integramos con discreción, guiamos solo cuando hace falta y entregamos un reportaje completo para revivir el día tal y como fue: preparativos, ceremonia, cóctel y fiesta.</p>
+</div>
+<p style="margin-bottom: 20px; color: var(--texto-secundario);"><strong>Nosotros somos Enrique y Sonia</strong>, aunque el equipo de Happy Weddings está formado por varios profesionales del sector de la fotografía y vídeo de bodas. Nosotros estamos siempre al frente.</p>
+<p style="margin-bottom: 20px; color: var(--texto-secundario);">Llevamos más de <strong>10 años</strong> metidos en bodas hasta el cuello: cámaras al hombro, zapatillas cómodas y mil historias que contar. Nos vais a ver correr, reír, o incluso emocionarnos con vosotros (a veces literal), y dejarlo todo para que tengáis recuerdos que no den pereza enseñar.</p>
+<p style="margin-bottom: 0; color: var(--texto-secundario);">No hacemos poses de catálogo ni vídeos que parecen tráileres de peli sueca. Hacemos la vuestra. Con emoción, con fiesta y con alma.</p>
 </div>
 </div>
 </div>
@@ -1049,8 +1062,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
       </details>
 
       <details class="faq-item reveal">
-        <summary>¿Podemos elegir música y estilo del vídeo?</summary>
-        <div class="faq-body"><p>Sí. Nos decís el enfoque que os gusta (más cinematográfico o más documental) y lo adaptamos a vuestra boda.</p></div>
+        <summary>¿Cómo elegimos la música?</summary>
+        <div class="faq-body"><p>Editamos con las canciones que habéis elegido para vuestra boda (entrada, ceremonia, baile, etc.). Si necesitamos completar algún momento, os pediremos 1–2 referencias para mantener la misma línea musical.</p></div>
       </details>
 
       <details class="faq-item reveal">
@@ -1077,7 +1090,10 @@ a, button { -webkit-tap-highlight-color: transparent; }
 <div class="section-header">
 <span>Contacto</span>
 <h2>Fotógrafos y videógrafos de boda en Castellón, Valencia y Alicante</h2>
-<p style="color: var(--texto-secundario); margin-top: 10px; font-size: 0.9rem;">Contadnos fecha y lugar y os diremos en <strong>24h</strong> si estamos disponibles. Si queréis, os enviamos ejemplos de bodas en <strong>Valencia, Castellón o Alicante</strong> similares a la vuestra.</p>
+<p style="color: var(--texto-secundario); margin-top: 10px; font-size: 0.9rem;">
+  Contadnos fecha y lugar y os diremos en <strong>24h</strong> si estamos disponibles.
+  Podéis ver bodas reales y trabajos completos en nuestro <strong>Instagram</strong>.
+</p>
 </div>
 <!-- FORMSPREE: Código xojvqndl -->
 <div class="contact-links reveal" id="contact-links"><a class="contact-pill" href="https://www.instagram.com/happyweddings.spain/" rel="noopener" target="_blank">Instagram</a><a class="contact-pill" href="https://wa.me/34614297072" rel="noopener" target="_blank">WhatsApp</a><a class="contact-pill" href="mailto:happyweddings.spain@gmail.com">Email</a></div><form action="https://formspree.io/f/xojvqndl" method="POST">
