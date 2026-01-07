@@ -29,6 +29,8 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
     
+    html.menu-open, body.menu-open { height: 100%; }
+
     body {
         background-color: var(--blanco);
         color: var(--texto-principal);
@@ -79,15 +81,37 @@
 
     /* Menú Móvil */
     .mobile-nav {
-        position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
-        background: var(--bg-crema); display: flex; flex-direction: column;
-        transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 2000;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;          /* fallback */
+        height: 100dvh;         /* viewport dinámico (mejor en móvil) */
+        background: var(--bg-crema);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;       /* el scroll lo gestiona la lista interna */
+        transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 3000;          /* por encima del botón de WhatsApp */
     }
     .mobile-nav.active { right: 0; }
     .mobile-nav-header { padding: 60px 20px 20px; display: flex; justify-content: center; position: relative; }
     .mobile-logo { width: 160px; height: auto; }
     .close-btn { position: absolute; right: 30px; top: 55px; background: none; border: none; font-size: 2.5rem; color: var(--texto-principal); cursor: pointer; }
-    .mobile-nav-links { flex: 1; display: flex; flex-direction: column; padding-top: 20px; align-items: center; list-style: none; overflow-y: auto; }
+    .mobile-nav-links {
+        flex: 1;
+        min-height: 0; /* crítico en flex para que el overflow funcione */
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+        align-items: center;
+        list-style: none;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+        overscroll-behavior: contain;
+        width: 100%;
+    }
     .mobile-nav li { margin: 15px 0; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
     .mobile-nav.active li { opacity: 1; transform: translateY(0); }
     .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--texto-principal); text-decoration: none; position: relative; }
@@ -172,9 +196,12 @@
         width: 60px; height: 60px; border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
         font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        z-index: 2000; transition: all 0.3s ease;
+        z-index: 1500; transition: all 0.3s ease;
     }
     .whatsapp-float:hover { background-color: var(--acento); transform: scale(1.1); }
+
+    /* Cuando el menú móvil está abierto, ocultamos el botón para que no tape 'Contacto' */
+    body.menu-open .whatsapp-float { opacity: 0; pointer-events: none; transform: scale(0.9); }
 
     /* LIGHTBOX */
     .lightbox { position: fixed; inset: 0; background: rgba(10, 10, 10, 0.98); z-index: 5000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
@@ -361,15 +388,50 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        function toggleMenu() { 
+        
+        let __menuScrollY = 0;
+        function lockBodyScroll() {
+            __menuScrollY = window.scrollY || window.pageYOffset || 0;
+            document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
+            // En iOS, overflow:hidden en body no siempre bloquea el scroll del fondo.
+            // Este patrón fija el body y conserva la posición.
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${__menuScrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+        }
+
+        function unlockBodyScroll() {
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo(0, __menuScrollY);
+        }
+
+        function toggleMenu() {
             const nav = document.getElementById('mobile-nav');
             nav.classList.toggle('active');
-            if(nav.classList.contains('active')){
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+
+            const isOpen = nav.classList.contains('active');
+            if (isOpen) lockBodyScroll();
+            else unlockBodyScroll();
         }
+        }
+
+
+        /* Close mobile menu when clicking a link (y evita estados raros de scroll) */
+        document.querySelectorAll('#mobile-nav a').forEach((link) => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mobile-nav');
+                if (nav.classList.contains('active')) toggleMenu();
+            });
+        });
 
         window.addEventListener('scroll', () => {
             const header = document.getElementById('navbar');
